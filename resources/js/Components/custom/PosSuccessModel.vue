@@ -165,7 +165,7 @@ const handlePrintReceipt = () => {
         }
         return item;
     };
-    
+
     const getItemBasePrice = (item) => {
         const target = getSelectedBatch(item);
         if (props.saleType === 'wholesale') {
@@ -376,7 +376,7 @@ const productRows = props.products
   <body>
       <div class="receipt-container">
                 <div class="header">
-   <img src="/images/billlogo.png" style="width: 230px; height: 100px;" />
+   <img src="/images/billlogo.png" style="width: 160px; height: 140px;" />
 
            ${companyInfo?.value?.name ? `<h1>${companyInfo.value.name}</h1>` : ''}
   ${companyInfo?.value?.address ? `<p>${companyInfo.value.address}</p>` : ''}
@@ -438,6 +438,7 @@ const productRows = props.products
               </div>
               ` : ''}
           </div>
+
 
 
 
@@ -526,6 +527,15 @@ const productRows = props.products
               </div>
               `}
           </div>
+
+
+            <div class="footer">
+        <p>THANK YOU COME AGAIN</p>
+        <p class="italic">Let the quality define its own standards</p>
+        <p style="font-weight:bold;">Powered by JAAN Network Ltd.</p>
+        <p>${new Date().toLocaleTimeString()}</p>
+      </div>
+
       </div>
     </div>
     </body>
