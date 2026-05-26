@@ -98,7 +98,7 @@
                             @submit.prevent="submitSize"
                           >
                             <label class="block text-md font-bold text-gray-700"
-                              >Size Name:</label
+                              >Size Name: <span class="text-red-500 ml-1 text-xl">*</span></label
                             >
                             <input
                               v-model="sizeForm.sizeName"
@@ -133,8 +133,8 @@
                             v-if="dialogType === 'color'"
                             @submit.prevent="submitColor"
                           >
-                            <label class="block text-md font-bold text-gray-700"
-                              >Color Name:</label
+                              <label class="block text-md font-bold text-gray-700"
+                                >Color Name: <span class="text-red-500 ml-1 text-xl">*</span></label
                             >
                             <input
                               v-model="colorForm.colorName"
@@ -169,8 +169,8 @@
                             v-if="dialogType === 'category'"
                             @submit.prevent="submitCategory"
                           >
-                            <label class="block text-md font-bold text-gray-700"
-                              >Category Name:</label
+                              <label class="block text-md font-bold text-gray-700"
+                                >Category Name: <span class="text-red-500 ml-1 text-xl">*</span></label
                             >
                             <input
                               v-model="categoryForm.categoryName"
@@ -237,7 +237,7 @@
                   <div class="flex items-center gap-8">
                     <div class="w-full">
                   <label class="block text-sm font-medium text-gray-300"
-                    >Category Name:</label
+                    >Category Name: <span class="text-red-500 ml-1 text-xl">*</span></label
                   >
                   <select
                     required
@@ -323,7 +323,7 @@
                     >
                   </div>
                 </div>
-                
+
                 <div class="flex items-center gap-8">
                   <div class="w-full">
                     <label class="block text-sm font-medium text-gray-300"
@@ -343,8 +343,8 @@
                     >
                   </div>
                   <div class="w-full">
-                      <label class="block text-sm font-medium text-gray-300"
-                        >Product Name:</label
+                          <label class="block text-sm font-medium text-gray-300"
+                          >Product Name: <span class="text-red-500 ml-1 text-xl">*</span></label
                       >
                       <input
                         v-model="form.name"
@@ -359,7 +359,7 @@
                       }}</span>
                     </div>
                 </div>
-                
+
                 <div>
                   <div class="flex items-center gap-8">
                     <!-- First select box with label and error -->
@@ -380,7 +380,7 @@
                       >{{ form.errors.purchase_date }}</span
                     >
                   </div>
-                    
+
                      <div class="w-full">
                     <label class="block text-sm font-medium text-gray-300"
                       >Expire Date:</label
@@ -397,7 +397,7 @@
                       class="mt-4 text-red-500"
                       >{{ form.errors.expire_date }}</span
                     >
-                  </div> 
+                  </div>
                   </div>
                 </div>
                 <div>
@@ -460,10 +460,10 @@
                 <div class="flex items-center gap-8 mt-6">
                   <!-- Cost Price input -->
                   <div class="w-full">
-                    <label
+                      <label
                       for="cost_price"
                       class="block text-sm font-medium text-gray-300"
-                      >Cost Price:</label
+                      >Cost Price: <span class="text-red-500 ml-1 text-xl">*</span></label
                     >
                     <input
                       type="number"
@@ -485,7 +485,7 @@
                     <label
                       for="stock_quantity"
                       class="block text-sm font-medium text-gray-300"
-                      >Stock Quantity:</label
+                      >Stock Quantity: <span class="text-red-500 ml-1 text-xl">*</span></label
                     >
                     <input
                       type="number"
@@ -507,7 +507,7 @@
                   <h3 class="mb-4 text-md font-bold text-gray-300 border-b border-gray-600 pb-2">Retail Pricing</h3>
                   <div class="flex items-center gap-8">
                     <div class="w-full">
-                      <label for="retail_price" class="block text-sm font-medium text-gray-300">Retail Price:</label>
+                      <label for="retail_price" class="block text-sm font-medium text-gray-300">Retail Price: <span class="text-red-500 ml-1 text-xl">*</span></label>
                       <input
                         type="number"
                         step="0.01"

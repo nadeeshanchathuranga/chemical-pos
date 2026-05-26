@@ -50,7 +50,7 @@
                   <div class="w-full">
                     <div>
                       <label class="block text-sm font-medium text-gray-300"
-                        >Product Name:</label
+                        >Product Name: <span class="text-red-500 ml-1 text-xl">*</span></label
                       >
                       <input
                         v-model="form.name"
@@ -65,8 +65,8 @@
                     </div>
                   </div>
                   <div class="w-full">
-                    <label class="block text-sm font-medium text-gray-300"
-                      >Batch No:</label
+                      <label class="block text-sm font-medium text-gray-300"
+                      >Batch No: <span class="text-red-500 ml-1 text-xl">*</span></label
                     >
                     <input
                       v-model="form.batch_no"
@@ -90,7 +90,7 @@
                     <!-- Category Name -->
                     <div>
                       <label class="block text-sm font-medium text-gray-300"
-                        >Product Code:</label
+                        >Product Code: <span class="text-red-500 ml-1 text-xl">*</span></label
                       >
                       <input
                         v-model="form.code"
@@ -109,7 +109,7 @@
                     <!-- Category Name -->
                     <div>
                       <label class="block text-sm font-medium text-gray-300"
-                        >Category Name:</label
+                        >Category Name: <span class="text-red-500 ml-1 text-xl">*</span></label
                       >
                       <select
                         required
@@ -145,13 +145,13 @@
                   <div class="w-full">
                     <div>
                       <label class="block text-sm font-medium text-gray-300"
-                        >Purchase Date:</label
+                        >Purchase Date: <span class="text-red-500 ml-1 text-xl">*</span></label
                       >
                       <input
                         v-model="form.purchase_date"
                         type="date"
                         id="purchase_date"
-                         
+
                         class="w-full px-4 py-2 mt-2 text-black rounded-md focus:outline-none focus:ring focus:ring-blue-600"
                       />
                       <span v-if="form.errors.purchase_date" class="mt-4 text-red-500">{{
@@ -160,8 +160,8 @@
                     </div>
                   </div>
                   <div class="w-full">
-                    <label class="block text-sm font-medium text-gray-300"
-                      >Expire Date:</label
+                      <label class="block text-sm font-medium text-gray-300"
+                      >Expire Date: <span class="text-red-500 ml-1 text-xl">*</span></label
                     >
                     <input
                       v-model="form.expire_date"
@@ -185,7 +185,7 @@
                       <label
                         for="size_id"
                         class="block text-sm font-medium text-gray-300"
-                        >Size:</label
+                        >Size: <span class="text-red-500 ml-1 text-xl">*</span></label
                       >
                       <select
                         v-model="form.size_id"
@@ -214,7 +214,7 @@
                       <label
                         for="color_id"
                         class="block text-sm font-medium text-gray-300"
-                        >Color:</label
+                        >Color: <span class="text-red-500 ml-1 text-xl">*</span></label
                       >
                       <select
                         v-model="form.color_id"
@@ -243,10 +243,10 @@
                 <div class="flex items-center gap-8 mt-6">
                   <!-- Cost Price input -->
                   <div class="w-full">
-                    <label
+                      <label
                       for="cost_price"
                       class="block text-sm font-medium text-gray-300"
-                      >Cost Price:</label
+                      >Cost Price: <span class="text-red-500 ml-1 text-xl">*</span></label
                     >
                     <input
                       type="number"
@@ -270,7 +270,7 @@
                   <h3 class="mb-4 text-md font-bold text-gray-300 border-b border-gray-600 pb-2">Retail Pricing</h3>
                   <div class="flex items-center gap-8">
                     <div class="w-full">
-                      <label for="retail_price" class="block text-sm font-medium text-gray-300">Retail Price:</label>
+                      <label for="retail_price" class="block text-sm font-medium text-gray-300">Retail Price: <span class="text-red-500 ml-1 text-xl">*</span></label>
                       <input
                         type="number"
                         step="0.01"
@@ -358,7 +358,7 @@
                     <label
                       for="stock_quantity"
                       class="block text-sm font-medium text-gray-300"
-                      >Stock Quantity:</label
+                      >Stock Quantity: <span class="text-red-500 ml-1 text-xl">*</span></label
                     >
 
                     <input
@@ -375,7 +375,7 @@
                     <label
                       for="image"
                       class="block text-sm font-medium text-gray-300"
-                      >Supplier Name :</label
+                      >Supplier Name : <span class="text-red-500 ml-1 text-xl">*</span></label
                     >
 
                     <select
@@ -401,7 +401,7 @@
                 <div class="flex items-center gap-8 mt-6">
                   <div class="w-full">
                     <label class="block text-sm font-medium text-gray-300"
-                      >Barcode:</label
+                      >Barcode: <span class="text-red-500 ml-1 text-xl">*</span></label
                     >
                     <input
                       v-model="form.barcode"
@@ -416,7 +416,7 @@
                 <div class="flex items-center gap-8 mt-6" v-if="isPharma">
                   <div class="w-full">
                     <label class="block text-sm font-medium text-gray-300"
-                      >Expire Date:</label
+                      >Expire Date: <span class="text-red-500 ml-1 text-xl">*</span></label
                     >
                     <input
                       v-model="form.expire_date"
@@ -438,7 +438,7 @@
                     <label
                       for="image"
                       class="block text-sm font-medium text-gray-300"
-                      >Image:</label
+                      >Image: <span class="text-red-500 ml-1 text-xl">*</span></label
                     >
                     <div class="w-full md:w-6/12">
                       <label class="block text-sm font-medium text-white"
