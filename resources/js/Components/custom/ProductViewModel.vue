@@ -273,11 +273,11 @@ const formattedDate = computed(() =>
     return;
   }
 
-  // Exact 30mm × 18mm sticker size - 1 per row guaranteed
+  // Exact 50mm × 25mm sticker size - 1 per row guaranteed
   const MM_TO_PX = 3.78;
-  const LABEL_W_MM = 30;
-  const LABEL_H_MM = 18;
-  const BARCODE_H_MM = 7;
+  const LABEL_W_MM = 50;
+  const LABEL_H_MM = 25;
+  const BARCODE_H_MM = 10;
 
   // Build labels HTML
   const labelsHtml = Array.from({ length: count }).map((_, idx) => `
@@ -307,7 +307,7 @@ const formattedDate = computed(() =>
         }
 
         .barcode-container {
-          width: 36mm; /* Exactly 1 sticker × 30mm + padding */
+          width: 56mm; /* Exactly 1 sticker × 50mm + padding */
           margin: 0 auto;
           padding: 3mm;
           display: flex;
