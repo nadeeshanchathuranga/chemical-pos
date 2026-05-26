@@ -263,6 +263,11 @@ const productRows = props.products
 
 
     // Generate the receipt HTML
+    const now = new Date();
+    const formattedDate = `${String(now.getDate()).padStart(2, '0')}/${String(
+        now.getMonth() + 1
+    ).padStart(2, '0')}/${now.getFullYear()}`;
+
     const receiptHTML = `
   <!DOCTYPE html>
   <html lang="en">
@@ -396,7 +401,7 @@ const productRows = props.products
               <div class="info-row">
                   <div>
                       <p>Date:</p>
-                      <small>${new Date().toLocaleDateString()} </small>
+                      <small>${formattedDate} </small>
                   </div>
                   <div>
                       <p>Order No:</p>
