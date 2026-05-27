@@ -7,6 +7,7 @@ return new class extends Migration
 {
     public function up(): void
     {
+        DB::statement("UPDATE sales SET status = 'Open' WHERE status NOT IN('Open', 'Closed') OR status IS NULL");
         DB::statement("ALTER TABLE sales MODIFY status ENUM('Open', 'Closed', 'Complete') NOT NULL DEFAULT 'Closed'");
         DB::statement("UPDATE sales SET status = 'Complete' WHERE status = 'Closed' AND (is_credit = 0 OR balance_due = 0)");
     }

@@ -14,7 +14,6 @@ npm-debug.log
 yarn-error.log
 /.fleet
 /.idea
-/.vscode
 deploy.sh
 refresh_seed.sh
 merge-development.sh

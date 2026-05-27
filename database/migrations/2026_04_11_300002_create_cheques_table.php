@@ -8,7 +8,8 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('cheques', function (Blueprint $table) {
+          if (! Schema::hasTable('cheques')) {
+            Schema::create('cheques', function (Blueprint $table) {
             $table->id();
             $table->enum('type', ['Received', 'Issued']);       // Received = from customer, Issued = to supplier
             $table->string('cheque_number');
@@ -36,7 +37,8 @@ return new class extends Migration
                   ->nullOnDelete();
             $table->text('note')->nullable();
             $table->timestamps();
-        });
+            });
+          }
     }
 
     public function down(): void

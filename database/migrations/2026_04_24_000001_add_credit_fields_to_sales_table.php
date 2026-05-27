@@ -12,10 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('sales', function (Blueprint $table) {
-            $table->enum('status', ['Open', 'Closed'])->default('Closed')->after('payment_method');
-            $table->boolean('is_credit')->default(false)->after('status');
-            $table->decimal('paid_amount', 15, 2)->default(0)->after('total_cost');
-            $table->date('closing_date')->nullable()->after('paid_amount');
+            if (! Schema::hasColumn('sales', 'status')) {
+                $table->enum('status', ['Open', 'Closed'])->default('Closed')->after('payment_method');
+            }
+            if (! Schema::hasColumn('sales', 'is_credit')) {
+                $table->boolean('is_credit')->default(false)->after('status');
+            }
+            if (! Schema::hasColumn('sales', 'paid_amount')) {
+                $table->decimal('paid_amount', 15, 2)->default(0)->after('total_cost');
+            }
+            if (! Schema::hasColumn('sales', 'closing_date')) {
+                $table->date('closing_date')->nullable()->after('paid_amount');
+            }
         });
     }
 
@@ -24,8 +32,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('sales', function (Blueprint $table) {
-            $table->dropColumn(['status', 'is_credit', 'paid_amount', 'closing_date']);
-        });
+        foreach (['status', 'is_credit', 'paid_amount', 'closing_date'] as $column) {
+            if (Schema::hasColumn('sales', $column)) {
+                Schema::table('sales', function (Blueprint $table) use ($column) {
+                    $table->dropColumn($column);
+                });
+            }
+        }
     }
 };
