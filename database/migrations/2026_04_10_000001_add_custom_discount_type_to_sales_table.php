@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('sales', function (Blueprint $table) {
-            $table->enum('custom_discount_type', ['fixed', 'percent'])
-                ->default('fixed')
-                ->after('custom_discount');
-        });
+        if (! Schema::hasColumn('sales', 'custom_discount_type')) {
+            Schema::table('sales', function (Blueprint $table) {
+                $table->enum('custom_discount_type', ['fixed', 'percent'])
+                    ->default('fixed')
+                    ->after('custom_discount');
+            });
+        }
     }
 
     /**
